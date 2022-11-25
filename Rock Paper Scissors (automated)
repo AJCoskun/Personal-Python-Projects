@@ -1,0 +1,47 @@
+p1winsrock = 0
+p1winspaper = 0
+p1winsscissors = 0
+p2winsrock = 0
+p2winspaper = 0
+p2winsscissors = 0
+draw = 0
+
+P1 = ['rock', 'scissors', 'paper', 'paper', 'paper', 'paper', 'paper', 'rock', 'paper', 'scissors']
+P2 = ['paper', 'rock', 'scissors', 'rock', 'scissors', 'rock', 'rock', 'paper', 'scissors', 'paper']
+
+for turns in range(10):
+
+    if P1[turns] == "rock" and P2[turns] == "scissors":
+        print("P1 wins with rock", p1winsrock, "many times")
+        p1winsrock = p1winsrock + 1
+
+    if P1[turns] == "paper" and P2[turns] == "scissors":
+        print("P2 wins with scissors", p2winsscissors, "many times")
+        p2winsscissors = p2winsscissors + 1
+
+    if P1[turns] == "rock" and P2[turns] == "paper":
+        print("P2 wins with paper", p2winspaper, "many times")
+        p2winspaper = p2winspaper + 1
+
+    if P1[turns] == P2[turns]:
+        print("it's a draw")
+        draw = draw + 1
+
+    if P1[turns] == "scissors" and P2[turns] == "rock":
+        print("P2 wins with rock", p2winsrock, "many times")
+        p2winsrock = p2winsrock + 1
+
+    if P1[turns] == "scissors" and P2[turns] == "paper":
+        print("P1 wins with scissors", p1winsscissors, "many times")
+        p1winsscissors = p1winsscissors + 1
+
+    if P1[turns] == "paper" and P2[turns] == "rock":
+        print("P1 wins with paper", p1winspaper, "many times")
+        p1winspaper = p1winspaper + 1
+
+o = p1winspaper + p1winsrock + p1winsscissors
+e = p2winspaper + p2winsrock + p2winsscissors
+
+print("there were", draw, "draws")
+print("player1 won", o, "many times in total")
+print("player2 won", e, "many times in total")
