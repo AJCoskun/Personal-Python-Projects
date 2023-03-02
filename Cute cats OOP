@@ -1,0 +1,46 @@
+import os
+cats = []
+class cat:
+    def __init__(self, breed, desc, lifelen, weight, length, coatncolour, img):
+        self.breed = breed
+        self.desc = desc
+        self.lifelen = lifelen
+        self.weight = weight
+        self.length = length
+        self.img = img
+        self.coatncolour = coatncolour
+
+    def __repr__(self):
+        return self.breed
+
+    # GetCatDetails() = Returns a tuple of all the cat details
+    def GetCatDetails(self):
+        print(self.breed, self.desc, self.lifelen, self.weight, self.length, self.img, self.coatncolour)
+
+    def GetCatLife(self):
+        print(self.breed, self.lifelen)
+
+    def getageevg(self):
+        pass
+
+    def Constructor(self):
+        try:
+            with open('CutestCats.txt') as f:
+                for line in f:
+                    parts = line.split(",")
+                    breed = parts[0]
+                    desc = parts[1]
+                    lifelen = parts[2]
+                    weight = parts[3]
+                    length = parts[4]
+                    img = parts[5]
+                    coatncolour = parts[6]
+                    cats.append(cat(breed, desc, lifelen, weight, length, coatncolour, img))
+        except OSError:
+            print("Sorry, could not find the file. Make sure it is in the correct directory. The current directory is",
+                  os.getcwd())
+
+
+print(cats)
+
+
